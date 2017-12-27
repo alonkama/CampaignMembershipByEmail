@@ -65,8 +65,6 @@ public class SendMemberListController {
         Messaging.SingleEmailMessage email =new Messaging.SingleEmailMessage();
         String subject ='Chapter members for ' + campaignName;
         email.setSubject(subject);
-        if (coLeaderEmails.size() == 0)
-            coLeaderEmails.add('sally@sosspeace.org');
         email.setToAddresses(coLeaderEmails);
         if (emailBody == null || emailBody.length() == 0)
             emailBody = subject;

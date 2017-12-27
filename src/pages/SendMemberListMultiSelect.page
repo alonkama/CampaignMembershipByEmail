@@ -1,0 +1,13 @@
+<apex:page standardController="Campaign" recordSetVar="chapters" extensions="SendMemberListController">
+    <h2>Email to the leaders of the following groups:</h2>
+    <ul>
+        <apex:repeat var="c" value="{!chapters}">
+        	<li>{!c.Name}</li>
+    	</apex:repeat>
+    </ul>
+    <h2>Add an email body:</h2>
+    <apex:form >
+        <apex:inputTextarea value="{!emailBody}" cols="60" rows="6"/><p/>
+        <apex:commandButton value="Save" action="{!sendEmailToLeaders}"/>                                                             
+    </apex:form>
+</apex:page>
